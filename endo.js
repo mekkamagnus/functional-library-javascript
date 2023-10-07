@@ -1,0 +1,14 @@
+// Endo Monoid
+
+/**
+ * @file Standalone code for the Endo monoid.
+ * @author Mekael Turner
+ */
+
+/**
+ * Factory function for creating a Endo monoid.
+ * @name Endo
+ * @namespath Endo
+ * @param {*} - The initial value
+ * @tutorial endo
+ */

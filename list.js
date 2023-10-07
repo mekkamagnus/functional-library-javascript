@@ -7,7 +7,13 @@
 
 /**
  * Factory function for creating a list monad
+ * @name List
+ * @namespath List
  * @param {Array} list - The initial list
+ * @tutorial list
+ * @example
+ * List([1, 2, 3, 4])
+ * List(["red", "Blue", "Yellow", "Green"])
  */
 
 export const List = list => ({
@@ -15,45 +21,39 @@ export const List = list => ({
 
   /**
    * Applies a function to each element in the list and returns a new list monad.
+   * @function
+   * @namepath List#map
    * @param {function} fn - The mapping function.
    * @returns {Object} - A new list monad with the mapped values.
    */
   map: fn => List(list.map(fn)),
+
+  /**
+   * Folds the list into a single value using a binary function and an initial value (empty)
+   * @param {function} fn - the folding function
+   * @param {*} initialValue - initial accumlator value.
+   * @returns {Object} - A new list monad with a single folded value
+   */
   fold: (fn, initialValue) => List(list.reduce(fn, initialValue)),
+
+  /**
+   * Folds and maps the list using a monoid and an empty value.
+   * @param {function} monoid - The monoid constructor function.
+   * @param {*} empty - The empty monoid value.
+   * @returns {Object} - A new list monad with a single folded and mapped monoid value.
+   */
   foldMap(monoid, empty) {
     const mappedList = list.reduce(fn, initialValue);
     const result = mappedList.reduce(
       (accumalator, monoidValue) => accumalator.concat(monoidValue),
       empty,
     );
-    return new List(result);
+    return List(result);
   },
+
+  /**
+   * Extracts the underlying list
+   * @returns {Array} - The underlying list.
+   */
   extract: () => list,
 });
-
-class ListMonoid {
-  constructor(list) {
-    this.list = list;
-  }
-
-  map(fn) {
-    return new ListMonoid(this.list.map(fn));
-  }
-
-  fold(fn, initial) {
-    return new ListMonoid(this.list.reduce(fn, initial));
-  }
-
-  foldMap(monoid, empty) {
-    const mappedList = this.list.map(value => monoid(value));
-    const result = mappedList.reduce(
-      (accumalator, monoidValue) => accumalator.concat(monoidValue),
-      empty,
-    );
-    return new ListMonoid(result);
-  }
-
-  extract() {
-    return this.list;
-  }
-}

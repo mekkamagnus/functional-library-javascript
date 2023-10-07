@@ -1,0 +1,20 @@
+{
+  "source": {
+    "include": ["./"],
+    "exclude": ["./a-skeptic/**", "./a-skeptic/notification-data.js"], // Exclude the "a-skeptic" folder and its contents
+    "includePattern": ".js$",
+    "excludePattern": "(node_modules/|docs|a-sceptic)"
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": true
+  },
+  "opts": {
+    "recurse": true,
+    "destination": "./docs/",
+    "tutorials": "./tutorials",
+    "readme": "./readme.md",
+    "package": "./package.json"
+  }
+}

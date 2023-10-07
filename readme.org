@@ -1,0 +1,50 @@
+:PROPERTIES:
+:ID:       4C60BB62-72FE-497C-BA95-CA43F6C15381
+:END:
+#+title: Functional Programming Sandbox Readme
+#+description: Functional programming sandbox for me to work through functional programming concepts using JavaScript.
+
+* Overview 
+This is a functional programming sandbox for me to work through functional programming concepts using JavaScript and PureScript.
+
+JavaScript is a functional language but I feel using JavaScript I will have more opportunities to use these concepts in day to day life. PureScript will give me more chances to use some techniques which maybe better expressed in Haskell while still being able to stay in the JavaScript ecosystem.
+
+I'm using JSDocs so that I can better describe and document my code and better understand how to make my JavaScript code more type safe.
+
+I will be rewriting utility function like those seen in lodash, underscore.js and rambda. I want to
+- better understand how to use these functions
+- know the function and tools available,
+- techniques used
+- know which functions are most common 
+
+  Even though I'm using JavaScript, I'm starting from a first principle position because I hope to be able to recreate the techniques and libraries in any language I encounter.
+  
+For now having an understanding of composition is more important then performance. As I have a better grasp of composition I will optimize for performance. My focus is on fast prototyping through quick reasoning.
+
+
+* Influences 
+
+** Functional Programming Made Easier 
+Website: https://leanpub.com/fp-made-easier#:~:text=Functional%20Programming%20Made%20Easier%20will,of%20today's%20working%20Functional%20Programmers.
+** Lodash
+Website: https://lodash.com/
+Github: https://github.com/lodash/lodash
+
+** Underscore.js
+Github: https://github.com/jashkenas/underscore
+Website: https://underscorejs.org/
+
+** Ramda.js
+Website: https://ramdajs.com/
+Github: https://github.com/ramda/ramda
+
+** Frontend Masters Functional Programming 
+
+*** Hardcore Functional Architecture 
+Github: https://github.com/FrontendMasters/hardcore-functional-architecture/tree/master
+
+** JSDocs 
+Website: https://jsdoc.app/
+
+** Professor Frisby's Mostly Adequate Guide to Functional Programming 
+Gitbook: https://mostly-adequate.gitbook.io/mostly-adequate-guide/

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: list.js</title>
+    <title>JSDoc: Tutorial: List Tutorial</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,80 +17,24 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: list.js</h1>
+    <h1 class="page-title">Tutorial: List Tutorial</h1>
 
-    
-
-
-
-    
     <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>// @ts-check
 
-/**
- * @file Standalone code for the List monad.
- * @author Mekael Turner
- */
+<header>
+    
 
-/**
- * Factory function for creating a list monad
- * @name List
- * @namespath List
- * @param {Array} list - The initial list
- * @tutorial list
- * @example
- * List([1, 2, 3, 4])
- * List(["red", "Blue", "Yellow", "Green"])
- */
+    <h2>List Tutorial</h2>
+</header>
 
-export const List = list => ({
-  list,
+<article>
+    <h1>Overview</h1>
+<p>This is about the List monad</p>
+<h2>Immutable-ext</h2>
+<p><a href="https://github.com/DrBoolean/immutable-ext/blob/master/index.js">DrBoolean Immutable-ext Github</a></p>
+</article>
 
-  /**
-   * Applies a function to each element in the list and returns a new list monad.
-   * @function
-   * @namepath List#map
-   * @param {function} fn - The mapping function.
-   * @returns {Object} - A new list monad with the mapped values.
-   */
-  map: fn => List(list.map(fn)),
-
-  /**
-   * Folds the list into a single value using a binary function and an initial value (empty)
-   * @param {function} fn - the folding function
-   * @param {*} initialValue - initial accumlator value.
-   * @returns {Object} - A new list monad with a single folded value
-   */
-  fold: (fn, initialValue) => List(list.reduce(fn, initialValue)),
-
-  /**
-   * Folds and maps the list using a monoid and an empty value.
-   * @param {function} monoid - The monoid constructor function.
-   * @param {*} empty - The empty monoid value.
-   * @returns {Object} - A new list monad with a single folded and mapped monoid value.
-   */
-  foldMap(monoid, empty) {
-    const mappedList = list.reduce(fn, initialValue);
-    const result = mappedList.reduce(
-      (accumalator, monoidValue) => accumalator.concat(monoidValue),
-      empty,
-    );
-    return List(result);
-  },
-
-  /**
-   * Extracts the underlying list
-   * @returns {Array} - The underlying list.
-   */
-  extract: () => list,
-});
-</code></pre>
-        </article>
-    </section>
-
-
-
+</section>
 
 </div>
 
