@@ -14,7 +14,7 @@
     "recurse": true,
     "destination": "./docs/",
     "tutorials": "./tutorials",
-    "readme": "./readme.md",
+    "readme": "./readme.org",
     "package": "./package.json"
   }
 }

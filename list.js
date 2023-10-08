@@ -42,13 +42,10 @@ export const List = list => ({
    * @param {*} empty - The empty monoid value.
    * @returns {Object} - A new list monad with a single folded and mapped monoid value.
    */
-  foldMap(monoid, empty) {
-    const mappedList = list.reduce(fn, initialValue);
-    const result = mappedList.reduce(
-      (accumalator, monoidValue) => accumalator.concat(monoidValue),
-      empty,
-    );
-    return List(result);
+  foldMap: (monoid, empty) => {
+    return empty != null
+      ? list.reduce((acc, x, i) => acc.concat(monoid(x, i)), empty)
+      : list.map(monoid).reduce((acc, x) => acc.concat(x));
   },
 
   /**
